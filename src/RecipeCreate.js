@@ -25,6 +25,13 @@ function RecipeCreate({ createRecipe }) {
     setFormData({ ...initialFormState });
   };
 
+    const emptyForm =
+    formData.name === "" &&
+    formData.cuisine === "" &&
+    formData.photo === "" &&
+    formData.ingredients === "" &&
+    formData.preparation === "";
+
   const centerInput = {
     textAlign: "center",
   };
@@ -96,7 +103,7 @@ function RecipeCreate({ createRecipe }) {
               ></textarea>
             </td>
             <td id="action">
-              <button type="submit">Create</button>
+              <button type="submit" disabled={emptyForm}>Create</button>
             </td>
           </tr>
         </tfoot>
